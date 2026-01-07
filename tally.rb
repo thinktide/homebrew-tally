@@ -5,24 +5,42 @@
 class Tally < Formula
   desc "CLI time tracking utility"
   homepage "https://github.com/thinktide/tally"
-  version "0.1.0"
+  version "0.3.0"
   license "MIT"
-  depends_on :macos
 
-  if Hardware::CPU.intel?
-    url "https://github.com/thinktide/tally/releases/download/v0.1.0/tally_0.1.0_darwin_amd64.tar.gz"
-    sha256 "4502f4a018c35de13b1771c42b1b43bd3aef66c8bc406fc5d124d12b5cc1d836"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_darwin_amd64.tar.gz"
+      sha256 "831e0019cb82c2d8da71c3c09898552de860e79bbfd8efc4f99bfe20c4a53d70"
 
-    def install
-      bin.install "tally"
+      def install
+        bin.install "tally"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_darwin_arm64.tar.gz"
+      sha256 "69c8d68ee7c50bf4517dd540fb54e7ae02b290040657b2b68d73265a231e6a62"
+
+      def install
+        bin.install "tally"
+      end
     end
   end
-  if Hardware::CPU.arm?
-    url "https://github.com/thinktide/tally/releases/download/v0.1.0/tally_0.1.0_darwin_arm64.tar.gz"
-    sha256 "d576602dcf5d5af093b2554aacf5d953065a8e3b5d87d8a6825f8c0dda39b2a4"
 
-    def install
-      bin.install "tally"
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_linux_amd64.tar.gz"
+      sha256 "df39c85ac19a438a8b5e0c10b5a6c2940c8fdab6ac9b528274e093f2a60c4ed3"
+      def install
+        bin.install "tally"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_linux_arm64.tar.gz"
+      sha256 "2a11e73867bbd372138d9a2027d8a0cd0681cf3da1b18b66b9f393d9ae96acfa"
+      def install
+        bin.install "tally"
+      end
     end
   end
 
