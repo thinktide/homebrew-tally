@@ -5,21 +5,21 @@
 class Tally < Formula
   desc "CLI time tracking utility"
   homepage "https://github.com/thinktide/tally"
-  version "0.3.0"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_darwin_amd64.tar.gz"
-      sha256 "831e0019cb82c2d8da71c3c09898552de860e79bbfd8efc4f99bfe20c4a53d70"
+      url "https://github.com/thinktide/tally/releases/download/v0.4.0/tally_0.4.0_darwin_amd64.tar.gz"
+      sha256 "3ab667deb36c9bd5603a1dda4d78f69585d6474062046729792c66e7b036eae9"
 
       def install
         bin.install "tally"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_darwin_arm64.tar.gz"
-      sha256 "69c8d68ee7c50bf4517dd540fb54e7ae02b290040657b2b68d73265a231e6a62"
+      url "https://github.com/thinktide/tally/releases/download/v0.4.0/tally_0.4.0_darwin_arm64.tar.gz"
+      sha256 "2ed6e0d3495b91337ba92c0617f1bfc97540d52736b634b6a0f6f11d148a3eb7"
 
       def install
         bin.install "tally"
@@ -29,15 +29,15 @@ class Tally < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_linux_amd64.tar.gz"
-      sha256 "df39c85ac19a438a8b5e0c10b5a6c2940c8fdab6ac9b528274e093f2a60c4ed3"
+      url "https://github.com/thinktide/tally/releases/download/v0.4.0/tally_0.4.0_linux_amd64.tar.gz"
+      sha256 "c1493487121b2ccc0eab96ca10f9c1e8442c7f4412ea306153238b80848c4338"
       def install
         bin.install "tally"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/thinktide/tally/releases/download/v0.3.0/tally_0.3.0_linux_arm64.tar.gz"
-      sha256 "2a11e73867bbd372138d9a2027d8a0cd0681cf3da1b18b66b9f393d9ae96acfa"
+      url "https://github.com/thinktide/tally/releases/download/v0.4.0/tally_0.4.0_linux_arm64.tar.gz"
+      sha256 "477409e6a954adf03d764e36d4f3d655bf89daf4ff82f0981828e1cafadb7a67"
       def install
         bin.install "tally"
       end
